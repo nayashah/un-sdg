@@ -26,10 +26,10 @@ export class UnSdg extends LitElement {
   static get properties() {
     return {
       goal: { type: String, reflect: true }, // track goal prop
-      label: { type: String }, // track label prop
+      label: { type: String },
       colorOnly: { type: Boolean, attribute: 'color-only', reflect: true }, // boolean to show color
       _currentSrc: { type: String }, // track current src
-      alt: { type: String }, // track alt text
+      alt: { type: String },
     };
   }
 
@@ -56,8 +56,8 @@ export class UnSdg extends LitElement {
   constructor() {
     super();
     this.goal = '1'; // default goal
-    this.label = ''; // default label
-    this.alt = null; // default alt text
+    this.label = '';
+    this.alt = null;
     this.colorOnly = false; // default colorOnly flag
     this._currentSrc = null; // default image source
   }
@@ -84,7 +84,7 @@ export class UnSdg extends LitElement {
       if (goalNumber >= 1 && goalNumber <= 17) {
         // if valid goal number, set image
         this._currentSrc = new URL(`../lib/svgs/goal-${goalNumber}.svg`, import.meta.url).href;
-        this.alt = `Goal ${goalNumber}: ${goalData[goalNumber - 1].name}`; // set alt text
+        this.alt = `Goal ${goalNumber}: ${goalData[goalNumber - 1].name}`;
       }
     }
   }
